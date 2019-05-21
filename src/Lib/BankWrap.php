@@ -1,28 +1,21 @@
 <?php
 
-namespace includes;
+namespace Lib;
 
-require_once(__DIR__ . "../vendor/autoload.php");
 use GuzzleHttp\Client;
 
-class BankService
+class BankWrap
 {
 
-
-    public static function getApiContent($url){
-
+    public function getApiContent(string $url) : array
+    {
         $client = new Client();
-
         $responses = $client
             ->request('GET', $url)
             ->getBody()
             ->getContents();
 
         $content =  json_decode($responses, true);
-
         return $content;
-
     }
-
-
 }

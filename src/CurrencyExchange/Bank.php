@@ -1,6 +1,6 @@
 <?php
 
-namespace src\CurrencyExchange;
+namespace CurrencyExchange;
 
 interface Bank
 {
