@@ -8,9 +8,19 @@
     <title>Document</title>
 </head>
 <body>
+{{ needed_course }}
+<form action="/index.php/currency/exchange/" method="POST" style="margin-top: 40px; margin-left: 40px; " >
+    <input type="text" placeholder="Amount"  name="amount" style="width: 200px; margin-right: 10px;" >
 
-<form action="">
+    <select name="curr_name"  style="width: 200px;">
+        <option  value="USD">USD</option>
+        <option  value="RUR">RUR</option>
+        <option  value="EUR">EUR</option>
+    </select>
 
+    =
+    <br />
+    <br />
     <input type="submit" name="submit">
 
 </form>

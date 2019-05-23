@@ -3,52 +3,87 @@
 
 namespace Core;
 
+
 class Router
 {
     protected $routes = [];
     protected $params =[];
 
 
-    function __construct()
+    public function __construct()
     {
-        $arr = require_once("config.php");
+        $arr = require 'config.php';
         foreach($arr as $key => $value){
             $this->add($key, $value);
         }
     }
 
-    public function add($route, $params){
-        $route = '#^' . $route . '$#';
+    public function add($route, $params) : void
+    {
         $this->routes[$route] = $params;
     }
 
-    public function match(){
-       $url = trim($_SERVER['REQUEST_URI'],'/index.php');
-       foreach($this->routes as $route => $params){
-            if(preg_match($route, $url, $matches)) {
-                $this->params = $params;
-                return true;
-            }
-       }
-       return false;
+    public function match() : array
+    {
+       $url = explode('/', $_SERVER['REQUEST_URI']);
+       $params = [];
+           if(isset($url[2])) {
+               $params['controller'] = $url[2];
+           }
+           if(isset($url[3])) {
+               $params['action'] = $url[3];
+           }
+           if(empty($params)){
+               $params = ['controller' => '', 'action' => ''];
+           }
+        return $params;
     }
 
-    public function run(){
-        var_dump($this->routes);
-        if($this->match()){
-            $path = 'src\Controllers\\'.ucfirst($this->routes['controller']).'Controller';
-            /*if(class_exists($path)){
-                $action = $this->params['action'].'Action';
-                if(method_exists($path. $action)){
-                    $controller = new $path;
-                } else {
-                    echo 'Action not found: ' . $action;
-                }
-            } else {
-                echo 'Controller not found' . $path;
+    
+    public function run() : void
+    {
+        try{
+            if(empty($this->is_valid())) {
+                throw new \Exception();
             }
-        } else { */
-            echo 'Path not found' . $path;
+
+            $uri = $this->is_valid();
+            $path = 'Controllers\\' . ucfirst($uri['controller']) . 'Controller';
+
+            if(!class_exists($path)){
+                throw  new \Exception();
+            }
+
+            if(!method_exists($path, $uri['action'])){
+                throw new \Exception();
+            }
+            $controller = new $path;
         }
+        catch (\Exception $e){
+            echo $e->getMessage();
+        }
+    }
+
+
+
+    public function is_valid() : array
+    {
+        $uri = $this->match();
+        $valid_success = [];
+        if(!empty($uri)) {
+            foreach ($this->routes as $rout) {
+                if ($rout['controller'] === $uri['controller']) {
+                    $valid_success['controller'] = $uri['controller'];
+                } else {
+                    $valid_success['controller'] = '';
+                }
+                if( $rout['action'] === $uri['action'] ){
+                    $valid_success['action'] = $uri['action'];
+                } else {
+                    $valid_success['action'] = '';
+                }
+            }
+        }
+        return $valid_success;
     }
 }

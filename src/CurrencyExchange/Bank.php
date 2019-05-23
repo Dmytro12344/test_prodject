@@ -5,6 +5,6 @@ namespace CurrencyExchange;
 interface Bank
 {
 
-    public function getCourse();
+    public function getCourse() : float;
 
 }
