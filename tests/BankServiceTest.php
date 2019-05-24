@@ -15,25 +15,30 @@ class BankServiceTest extends TestCase
         $this->bank_service = new BankService();
     }
 
+    protected function tearDown(): void
+    {
+        $this->bank_service = null;
+    }
+
 
     public function testGetCourseBankService__with_correct_arg() : void
     {
-        $bank = $this->getMockBuilder(PrivatBank::class)->getMock();
-
+        $bank = $this->getMockBuilder(PrivatBank::class)->setMethods(['getCourse'])->getMock();
 
         $bank->expects($this->once())
-             ->method('getCourse')
-             ->willReturn(mt_rand(5,5000000) * 0.1);
+            ->method('getCourse')
+            ->with($this->equalTo(1.1));
 
-        $CurrentBank = $this->getMockBuilder(PrivatBank::class)
-            ->setMethods(['getInstance'])
-            ->getMock();
+       /* $BunkService = $this->getMockBuilder(BankService::class)->setMethods(['getInstance'])->getMock();
 
-        $CurrentBank->expects($this->once())
+        $BunkService->expects($this->once())
             ->method('getInstance')
-            ->willReturn($bank);
+            ->willReturn($bank); */
 
-        $this->assertTrue(is_a($CurrentBank->getCourse([]), PrivatBank::class));
+        $result = $this->bank_service->getCourse($bank, 1.1);
+
+        $this->assertIsFloat($result);
+
 
 
     }
