@@ -7,7 +7,6 @@ use CurrencyExchange\PrivatBank;
 
 class PrivatBankTest extends TestCase
 {
-    private $bank;
 
 
     public function testGetCourseWithCorrectAgr() : void

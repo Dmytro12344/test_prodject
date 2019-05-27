@@ -6,12 +6,12 @@ namespace CurrencyExchange;
 
 class BankService
 {
-    public function getCourse(Bank $current_bunk, $currency) : float
+    public function getCourse($currency) : float
     {
-        return $current_bunk->getCourse($currency);
+        return $this->getInstance()->getCourse($currency);
     }
 
-    protected function getInstance() : object
+    public function getInstance() : object
     {
         return new PrivatBank();
     }
