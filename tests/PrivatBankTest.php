@@ -9,27 +9,24 @@ class PrivatBankTest extends TestCase
 {
     private $bank;
 
-    protected function setUp() : void
+
+    public function testGetCourseWithCorectArg()
     {
-        $this->bank = new PrivatBank();
+        $bankAPI = $this->getMockBuilder(\Lib\BankWrap::class)->getMock();
+        $bankAPI->expects($this->once())->method('getApiContent')->willReturn([ 0 => ['ccy' => 'USD', 'buy' => 26.47478], 2 => ['ccy' => 'RUR', 'buy' => '123445']]);
+
+        $bank = $this->getMockBuilder(PrivatBank::class )->setMethods(['getBankWrap'])->getMock();
+
+        $bank->expects($this->once())->method('getBankWrap')->willReturn($bankAPI);
+
+
+
+        $this->assertEquals(26.47478, $bank->getCourse());
     }
 
-    protected function tearDown(): void
-    {
-        $this->bank = NULL;
-    }
 
-    public function testGetCourse__with_correct_arg() : void
-    {
-        $result = $this->bank->getCourse('EUR');
-        $this->assertIsFloat($result);
-        $this->assertNotNull($result);
-        $this->assertNotEmpty($result);
-        $this->assertIsNotArray($result);
-        $this->assertIsNotString($result);
-    }
 
-    public function testGetCourse_with_incorrect_arg() : void
+    /*public function testGetCourse_with_incorrect_arg() : void
     {
         $result = $this->bank->getCourse('It\'s incorrect argument' );
         $this->assertIsFloat($result);
@@ -39,5 +36,5 @@ class PrivatBankTest extends TestCase
 
         $this->assertEquals(0, $result);
         $this->assertEquals(0.0, $result);
-    }
+    } */
 }

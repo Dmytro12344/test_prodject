@@ -5,10 +5,17 @@ require_once(__DIR__ . "/vendor/autoload.php");
 use Core\Route\Router;
 use Core\Route\DispatcherRoute;
 use Helper\Common;
+use CurrencyExchange\PrivatBank;
+use Lib\BankWrap;
 
 
 
+$bank = new BankWrap();
 
+
+
+var_dump($bank->getApiContent('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=3'));
+die();
 
 $route = new Router('example.com');
 $route->add('home', '/', 'CurrencyController:exchange');

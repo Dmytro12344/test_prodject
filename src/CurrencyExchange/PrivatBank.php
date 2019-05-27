@@ -24,7 +24,7 @@ class PrivatBank implements Bank
         return $course_curr;
     }
 
-    protected function getBankWrap() : object
+    public function getBankWrap() : object
     {
         return new BankWrap();
     }
