@@ -10,31 +10,36 @@ class PrivatBankTest extends TestCase
     private $bank;
 
 
-    public function testGetCourseWithCorectArg()
+    public function testGetCourseWithCorrectAgr() : void
     {
         $bankAPI = $this->getMockBuilder(\Lib\BankWrap::class)->getMock();
-        $bankAPI->expects($this->once())->method('getApiContent')->willReturn([ 0 => ['ccy' => 'USD', 'buy' => 26.47478], 2 => ['ccy' => 'RUR', 'buy' => '123445']]);
-
+        $bankAPI->expects($this->once())->method('getApiContent')->willReturn([ 0 => ['ccy' => 'USD', 'buy' => 26.47478]]);
         $bank = $this->getMockBuilder(PrivatBank::class )->setMethods(['getBankWrap'])->getMock();
-
         $bank->expects($this->once())->method('getBankWrap')->willReturn($bankAPI);
-
-
 
         $this->assertEquals(26.47478, $bank->getCourse());
     }
 
-
-
-    /*public function testGetCourse_with_incorrect_arg() : void
+    public function testGetCourseWithEmptyArg() :void
     {
-        $result = $this->bank->getCourse('It\'s incorrect argument' );
-        $this->assertIsFloat($result);
-        $this->assertNotNull($result);
-        $this->assertEmpty($result); // 0.0 === empty
-        $this->assertIsNotArray($result);
+        $bankAPI = $this->getMockBuilder(\Lib\BankWrap::class)->getMock();
+        $bankAPI->expects($this->once())->method('getApiContent')->willReturn([]);
+        $bank = $this->getMockBuilder(PrivatBank::class )->setMethods(['getBankWrap'])->getMock();
+        $bank->expects($this->once())->method('getBankWrap')->willReturn($bankAPI);
 
-        $this->assertEquals(0, $result);
-        $this->assertEquals(0.0, $result);
-    } */
+        $this->assertEquals(0, $bank->getCourse());
+    }
+
+    public function testGetCourseWithIncorrectArg() : void
+    {
+        $bankAPI = $this->getMockBuilder(\Lib\BankWrap::class)->getMock();
+        $bankAPI->expects($this->once())->method('getApiContent')->willReturn([ 1 => ['ccy' => 'QWERTY', 'buy' => 12 ]]);
+        $bank = $this->getMockBuilder(PrivatBank::class )->setMethods(['getBankWrap'])->getMock();
+        $bank->expects($this->once())->method('getBankWrap')->willReturn($bankAPI);
+
+        $this->assertEquals(0, $bank->getCourse());
+    }
+
+
+
 }

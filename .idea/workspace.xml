@@ -4,7 +4,6 @@
     <list default="true" id="f2bea913-27c1-4045-897c-1875b571f350" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CurrencyExchange/PrivatBank.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrencyExchange/PrivatBank.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/PrivatBankTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PrivatBankTest.php" afterDir="false" />
     </list>
@@ -25,7 +24,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="84">
               <caret line="16" column="95" selection-start-line="16" selection-start-column="95" selection-end-line="16" selection-end-column="95" />
               <folding>
                 <element signature="e#56#78#0#PHP" expanded="true" />
@@ -37,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/PrivatBankTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="15" column="85" selection-start-line="15" selection-start-column="85" selection-end-line="15" selection-end-column="85" />
+            <state relative-caret-position="300">
+              <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
               <folding>
                 <element signature="e#8#39#0#PHP" expanded="true" />
               </folding>
@@ -47,19 +46,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Lib/BankWrap.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="33" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CurrencyExchange/PrivatBank.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="12" column="120" lean-forward="true" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="120" />
+            <state relative-caret-position="210">
+              <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -122,8 +112,8 @@
         <option value="$PROJECT_DIR$/src/Request/Request.php" />
         <option value="$PROJECT_DIR$/src/Controllers/CurrencyController.php" />
         <option value="$PROJECT_DIR$/templates/demo.twig" />
-        <option value="$PROJECT_DIR$/src/CurrencyExchange/PrivatBank.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/src/CurrencyExchange/PrivatBank.php" />
         <option value="$PROJECT_DIR$/tests/PrivatBankTest.php" />
       </list>
     </option>
@@ -184,7 +174,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,6 +185,12 @@
               <item name="example.com" type="b2602c69:ProjectViewProjectNode" />
               <item name="example.com" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="example.com" type="b2602c69:ProjectViewProjectNode" />
+              <item name="example.com" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="example.com" type="b2602c69:ProjectViewProjectNode" />
@@ -217,6 +212,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -282,12 +278,13 @@
       <workItem from="1558693068179" duration="13069000" />
       <workItem from="1558937804054" duration="3760000" />
       <workItem from="1558942017556" duration="9094000" />
-      <workItem from="1558959057348" duration="3003000" />
+      <workItem from="1558959057348" duration="4011000" />
+      <workItem from="1558964778790" duration="2448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110886000" />
+    <option name="totallyTimeSpent" value="114342000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -302,7 +299,7 @@
     <frame x="-1" y="25" width="1368" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19848485" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20151515" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -315,7 +312,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32905295" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33707866" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.24077046" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32905295" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -579,16 +576,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CurrencyExchange/PrivatBank.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="12" column="120" lean-forward="true" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="84">
           <caret line="16" column="95" selection-start-line="16" selection-start-column="95" selection-end-line="16" selection-end-column="95" />
           <folding>
             <element signature="e#56#78#0#PHP" expanded="true" />
@@ -596,10 +586,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CurrencyExchange/PrivatBank.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/PrivatBankTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="15" column="85" selection-start-line="15" selection-start-column="85" selection-end-line="15" selection-end-column="85" />
+        <state relative-caret-position="300">
+          <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
           <folding>
             <element signature="e#8#39#0#PHP" expanded="true" />
           </folding>
