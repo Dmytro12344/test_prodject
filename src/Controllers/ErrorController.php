@@ -4,11 +4,14 @@
 namespace Controllers;
 
 
-class ErrorController extends Controller
+class ErrorController
 {
 
     public function page404() : void
     {
-        echo "page 404";
+        header("Location: http://example.com/page_not_found"); /* Перенаправление браузера */
+
+
+        exit;
     }
 }

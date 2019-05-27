@@ -4,10 +4,18 @@
 namespace Controllers;
 
 
-class HomeController extends Controller
+use CurrencyExchange\BankService;
+use CurrencyExchange\PrivatBank;
+use Lib\TwigWrap;
+
+class HomeController
 {
     public function index() : void
     {
-        echo 'Index Page';
+
+
+
+        $twig = new TwigWrap();
+        $twig->render([], 'demo.twig');
     }
 }

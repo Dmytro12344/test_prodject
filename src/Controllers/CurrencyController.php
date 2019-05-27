@@ -2,35 +2,32 @@
 
 namespace Controllers;
 
+use Request\Request;
 use CurrencyExchange\BankService;
 use CurrencyExchange\PrivatBank;
-use CurrencyExchange\SomeBank;
-use http\Exception\InvalidArgumentException;
 use Lib\TwigWrap;
 
 class CurrencyController
 {
 
-    public function __construct()
-    {
-        $this->exchange();
-    }
-
     public function exchange() : void
     {
-        try {
-            $course = new BankService();
+        $request = new Request();
+        $twig = new TwigWrap();
+
+        if($request->isSubmitted() && $request->isValid())
+        {
             $bank = new PrivatBank();
-            $current_course = $course->getCourse($bank, $_POST['curr_name']);
-            $amount = $current_course * $_POST['amount'];
-            $twig = new TwigWrap();
+            $course = new BankService();
+            $postDate = $request->getPostData();
+
+            $current_course = $course->getCourse($bank, $postDate['curr_name']);
+            $amount = $current_course * $postDate['amount'];
+
             $twig->render(['needed_course' => $amount], 'exchange.twig');
-            throw new  \Exception('td');
         }
-        catch (\Exception $e){
-            echo $e->getMessage();
-            die();
-        }
+
+        $twig->render([], 'demo.twig');
 
     }
 
