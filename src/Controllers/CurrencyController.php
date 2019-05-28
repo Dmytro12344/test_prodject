@@ -2,7 +2,9 @@
 
 namespace Controllers;
 
+use Model\CurrencyModel;
 use Request\Request;
+use Validate\RequestValidate;
 use CurrencyExchange\BankService;
 use CurrencyExchange\PrivatBank;
 use Lib\TwigWrap;
@@ -14,17 +16,17 @@ class CurrencyController
     {
         $request = new Request();
         $twig = new TwigWrap();
+        $validation = new RequestValidate();
 
-        if($request->isSubmitted() && $request->isValid())
+        if($validation->isSubmitted() && $validation->isValid())
         {
+            $currency = new CurrencyModel();
             $bank = new PrivatBank();
             $course = new BankService();
-            $postDate = $request->getPostData();
+            $currency->fill($request->getRequest());
 
-            $current_course = $course->getCourse($bank, $postDate['curr_name']);
-            $amount = $current_course * $postDate['amount'];
-
-            $twig->render(['needed_course' => $amount], 'exchange.twig');
+            $exchange_raith = $course->getCourseRaith($bank, $currency->getFields());
+            $twig->render(['needed_course' => $exchange_raith], 'exchange.twig');
         }
 
         $twig->render([], 'demo.twig');

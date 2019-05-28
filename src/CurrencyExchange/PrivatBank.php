@@ -31,4 +31,9 @@ class PrivatBank implements Bank
         return new BankWrap();
     }
 
+    public function getBankName(): string
+    {
+        return 'PrivatBank';
+    }
+
 }

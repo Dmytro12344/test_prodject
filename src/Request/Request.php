@@ -6,40 +6,16 @@ namespace Request;
 
 class Request
 {
-    public function getPostData() : array
+    public function getRequest() : array
     {
-        $postData = [];
+        $Data = [];
 
-        if($_POST !== null || !empty($_POST))
+        if($_REQUEST !== null || !empty($_REQUEST))
         {
-            $postData = $_POST;
+            $Data = $_REQUEST;
         }
 
-        return $postData;
+        return $Data;
     }
-
-    public function isSubmitted(): bool
-    {
-        if(isset($_POST['submit']))
-        {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public function isValid()
-    {
-        foreach($this->getPostData() as $item)
-        {
-            if(!isset($item) || empty($item) || $item === null)
-            {
-                return false;
-            } else {
-                return true;
-            }
-        }
-    }
-
 
 }

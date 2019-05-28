@@ -10,4 +10,9 @@ class SomeBank implements Bank
     {
         return 3;
     }
+
+    public function getBankName() : string
+    {
+        return 'SomeBank';
+    }
 }

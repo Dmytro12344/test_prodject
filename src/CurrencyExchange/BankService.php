@@ -6,13 +6,39 @@ namespace CurrencyExchange;
 
 class BankService
 {
-    public function getCourse($currency) : float
+
+    public $banks = [];
+
+    public function __construct()
     {
-        return $this->getInstance()->getCourse($currency);
+        $this->add(PrivatBank::class);
+        $this->add(SomeBank::class);
     }
 
-    public function getInstance() : object
+
+    public function getCourseRaith(Bank $currentBank, array $arr) : float
     {
-        return new PrivatBank();
+        foreach($this->banks as $bank)
+        {
+            if($bank->getBankName() === $currentBank->getBankName())
+            {
+                return $this->getInstance($bank)->getCourse($arr['curr_name']) * $arr['amount'];
+            }
+        }
+        return 0;
+    }
+
+
+
+    public function getInstance($bank) : object
+    {
+        return new $bank;
+    }
+
+
+    public function add($class=Bank::class) : void
+    {
+        $bank = new $class;
+        $this->banks[] = $bank;
     }
 }
