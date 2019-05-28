@@ -6,23 +6,28 @@ namespace Model;
 
 class CurrencyModel
 {
-    private $fields = ['amount', 'curr_name'];
+    private $amount;
+    private $currName;
 
 
-
-    public function fill(array $arr) : void
+    public function __construct($arr)
     {
-        foreach($arr as $key => $value)
-        {
-            if(in_array($key, $this->fields))
-            {
-                $this->fields[$key] = $value;
-            }
-        }
+        $this->amount = $arr['amount'];
+        $this->currName = $arr['curr_name'];
     }
 
-    public function getFields() : array
+
+
+    public function getAmount() : float
     {
-        return $this->fields;
+        return $this->amount;
     }
+
+
+
+    public function getCurrName() : string
+    {
+        return $this->currName;
+    }
+
 }

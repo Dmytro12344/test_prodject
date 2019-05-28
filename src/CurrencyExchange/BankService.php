@@ -16,13 +16,13 @@ class BankService
     }
 
 
-    public function getCourseRaith(Bank $currentBank, array $arr) : float
+    public function getCourseRaith(Bank $currentBank, string $currName, float $amount) : float
     {
         foreach($this->banks as $bank)
         {
             if($bank->getBankName() === $currentBank->getBankName())
             {
-                return $this->getInstance($bank)->getCourse($arr['curr_name']) * $arr['amount'];
+                return $this->getInstance($bank)->getCourse($currName) * $amount;
             }
         }
         return 0;

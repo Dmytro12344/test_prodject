@@ -20,12 +20,11 @@ class CurrencyController
 
         if($validation->isSubmitted() && $validation->isValid())
         {
-            $currency = new CurrencyModel();
+            $currency = new CurrencyModel($request->getRequest());
             $bank = new PrivatBank();
             $course = new BankService();
-            $currency->fill($request->getRequest());
 
-            $exchange_raith = $course->getCourseRaith($bank, $currency->getFields());
+            $exchange_raith = $course->getCourseRaith($bank, $currency->getCurrName(), $currency->getAmount());
             $twig->render(['needed_course' => $exchange_raith], 'exchange.twig');
         }
 

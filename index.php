@@ -7,8 +7,8 @@ use Core\Route\DispatcherRoute;
 use Helper\Common;
 
 
-
-
+/*var_dump($_REQUEST);
+die();*/
 
 
 
