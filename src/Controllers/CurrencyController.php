@@ -6,9 +6,9 @@ use Model\CurrencyModel;
 use Validate\NumericValidator;
 use Validate\RequestValidate;
 use CurrencyExchange\BankService;
-
-
 use Lib\TwigWrap;
+
+
 
 class CurrencyController
 {
@@ -19,7 +19,7 @@ class CurrencyController
         $validationReq = new RequestValidate();
         $validationNum = new NumericValidator();
 
-        if($validationReq->isSubmitted() && $validationReq->isValid())
+        if($validationReq->isSubmitted())
         {
             try {
                 $currency = new CurrencyModel($validationNum->aboveZero($_POST['amount']), $_POST['curr_name']);
@@ -28,21 +28,22 @@ class CurrencyController
                 $course = new BankService();
 
                 $exchange_raith = $course->exchange($_POST['bank'], $currency->getCurrName(), $currency->getAmount());
-                $twig->render(['needed_course' => $exchange_raith], 'exchange.twig');
+                $twig->render(['needed_course' => $exchange_raith], 'demo.twig');
 
             }
             catch(\Exception\IncorrectCurrencyNameException $e)
             {
-                $twig->render(['error' => $e->getMessage()], 'exchange.twig');
+                $twig->render(['error' => $e->getMessage()], 'demo.twig');
             }
             catch(\Exception\InvalidAmountException $e)
             {
-                $twig->render(['error' => $e->getMessage()], 'exchange.twig');
+                $twig->render(['error' => $e->getMessage()], 'demo.twig');
             }
+        } else {
+
+            $twig->render([], 'demo.twig');
         }
-
-        $twig->render([], 'demo.twig');
-
     }
+
 
 }
