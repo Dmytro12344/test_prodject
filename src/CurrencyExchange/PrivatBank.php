@@ -4,6 +4,7 @@
 namespace CurrencyExchange;
 
 use Lib\BankWrap;
+use \Exception;
 
 class PrivatBank implements Bank
 {
@@ -11,7 +12,7 @@ class PrivatBank implements Bank
     public function getCourse(string $course = 'USD') : float
     {
         $courses = $this->getBankWrap()->getApiContent('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=3');
-        $course_curr = 0;
+
         if(isset($courses) && !empty($course))
         {
             foreach ($courses as $item)
@@ -23,7 +24,7 @@ class PrivatBank implements Bank
                 }
             }
         }
-        return $course_curr;
+        throw new Exception('Current currency not found');
     }
 
     public function getBankWrap() : object

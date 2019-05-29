@@ -23,13 +23,26 @@ class RequestValidate
             if(!isset($item) || empty($item) || $item === null)
             {
                 return false;
-            } else {
-                return true;
             }
+            return true;
         }
+        return false;
     }
 
-    public function getRequestInstance() : object
+    public function getCorrectNumber($date) : float
+    {
+        if($date < 0)
+        {
+            return $date * (-1);
+        }
+        return $date;
+    }
+
+
+
+
+
+        public function getRequestInstance() : object
     {
         return new Request();
     }

@@ -16,17 +16,27 @@ class BankService
     }
 
 
-    public function getCourseRaith(Bank $currentBank, string $currName, float $amount) : float
+    public function getCourse(string $bankName, string $currName) : float
     {
         foreach($this->banks as $bank)
         {
-            if($bank->getBankName() === $currentBank->getBankName())
+            if($bank->getBankName() === $bankName)
             {
-                return $this->getInstance($bank)->getCourse($currName) * $amount;
+                try {
+                    return $this->getInstance($bank)->getCourse($currName);
+                }catch(\Exception $e){
+                    echo $e->getMessage();
+                }
             }
         }
-        return 0;
+        throw new \Exception('not found');
     }
+
+    public function exchange(string $bankName, string $currName, float $amount) : float
+    {
+        return $this->getCourse($bankName, $currName) * $amount;
+    }
+
 
 
 

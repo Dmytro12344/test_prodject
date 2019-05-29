@@ -5,10 +5,18 @@ require_once(__DIR__ . "/vendor/autoload.php");
 use Core\Route\Router;
 use Core\Route\DispatcherRoute;
 use Helper\Common;
+use CurrencyExchange\OpenExchange;
+use Lib\BankWrap;
 
 
-/*var_dump($_REQUEST);
-die();*/
+$bank = new OpenExchange();
+$bank_wr = new BankWrap();
+
+
+
+
+
+//die();
 
 
 

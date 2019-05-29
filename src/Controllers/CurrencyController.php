@@ -3,10 +3,10 @@
 namespace Controllers;
 
 use Model\CurrencyModel;
-use Request\Request;
+use Validate\NumericValidator;
 use Validate\RequestValidate;
 use CurrencyExchange\BankService;
-use CurrencyExchange\PrivatBank;
+
 use Lib\TwigWrap;
 
 class CurrencyController
@@ -14,18 +14,24 @@ class CurrencyController
 
     public function exchange() : void
     {
-        $request = new Request();
         $twig = new TwigWrap();
-        $validation = new RequestValidate();
+        $validationReq = new RequestValidate();
+        $validationNum = new NumericValidator();
 
-        if($validation->isSubmitted() && $validation->isValid())
+        if($validationReq->isSubmitted() && $validationReq->isValid())
         {
-            $currency = new CurrencyModel($request->getRequest());
-            $bank = new PrivatBank();
-            $course = new BankService();
 
-            $exchange_raith = $course->getCourseRaith($bank, $currency->getCurrName(), $currency->getAmount());
-            $twig->render(['needed_course' => $exchange_raith], 'exchange.twig');
+            $currency = new CurrencyModel($validationNum->aboveZero($_POST['amount']), 'TDK');
+
+            $course = new BankService();
+            try
+            {
+                $exchange_raith = $course->exchange('PrivatBank', $currency->getCurrName(), $currency->getAmount());
+                $twig->render(['needed_course' => $exchange_raith], 'exchange.twig');
+            } catch(\Exception $e)
+            {
+                echo $e->getMessage();
+            }
         }
 
         $twig->render([], 'demo.twig');

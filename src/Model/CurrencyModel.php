@@ -10,10 +10,10 @@ class CurrencyModel
     private $currName;
 
 
-    public function __construct($arr)
+    public function __construct(float $amount,string $currName)
     {
-        $this->amount = $arr['amount'];
-        $this->currName = $arr['curr_name'];
+        $this->amount = $amount;
+        $this->currName = $currName;
     }
 
 
