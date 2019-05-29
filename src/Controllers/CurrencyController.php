@@ -30,7 +30,7 @@ class CurrencyController
                 $twig->render(['needed_course' => $exchange_raith], 'exchange.twig');
             } catch(\Exception $e)
             {
-                echo $e->getMessage();
+
             }
         }
 

@@ -11,8 +11,9 @@ class BankService
 
     public function __construct()
     {
-        $this->add(PrivatBank::class);
-        $this->add(SomeBank::class);
+        $this->add(new PrivatBank());
+        $this->add(new SomeBank());
+        $this->add(new OpenExchange());
     }
 
 
@@ -46,7 +47,7 @@ class BankService
     }
 
 
-    public function add($class=Bank::class) : void
+    public function add(Bank $class) : void
     {
         $bank = new $class;
         $this->banks[] = $bank;
