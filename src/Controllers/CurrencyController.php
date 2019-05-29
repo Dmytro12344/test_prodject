@@ -27,7 +27,7 @@ class CurrencyController
             $course = new BankService();
             try
             {
-                $exchange_raith = $course->exchange('PrivatBank', $currency->getCurrName(), $currency->getAmount());
+                $exchange_raith = $course->exchange($_POST['bank'], $currency->getCurrName(), $currency->getAmount());
                 $twig->render(['needed_course' => $exchange_raith], 'exchange.twig');
             } catch(\Exception\IncorrectCurrencyNameException $e)
             {

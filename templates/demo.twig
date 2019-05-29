@@ -5,18 +5,51 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+
     <title>Document</title>
 </head>
 <body>
+
+
 {{ needed_course }}
 <form action="/" method="POST" style="margin-top: 40px; margin-left: 40px; " >
-    <input type="number" placeholder="Amount"  name="amount" style="width: 200px; margin-right: 10px;" >
 
-    <select name="curr_name"  style="width: 200px;">
-        <option  value="USD">USD</option>
-        <option  value="RUR">RUR</option>
-        <option  value="EUR">EUR</option>
+    <select class="banks" name="bank" >
+        <option value="">Bank</option>
+        <option value="PrivatBank">PrivatBank</option>
+        <option value="OpenExchange">OpenExchange</option>
     </select>
+
+
+    <select class="curr_name" name="curr_name"  style="width: 200px;" disabled>
+        <option value="">Currency name</option>
+
+        <option class="PrivatBank" value="USD">USD</option>
+        <option class="PrivatBank" value="RUR">RUR</option>
+        <option class="PrivatBank" value="EUR">EUR</option>
+
+        <option class="OpenExchange" value="UAH">UAH</option>
+        <option class="OpenExchange" value="EUR">EUR</option>
+        <option class="OpenExchange" value="RUB">RUB</option>
+        <option class="OpenExchange" value="AED">AED</option>
+        <option class="OpenExchange" value="AFN">AFN</option>
+        <option class="OpenExchange" value="ALL">ALL</option>
+        <option class="OpenExchange" value="CNY">CNY</option>
+        <option class="OpenExchange" value="CLF">CLF</option>
+        <option class="OpenExchange" value="CAD">CAD</option>
+        <option class="OpenExchange" value="KMF">KMF</option>
+        <option class="OpenExchange" value="JOD">JOD</option>
+        <option class="OpenExchange" value="KPW">KPW</option>
+        <option class="OpenExchange" value="KGS">KGS</option>
+        <option class="OpenExchange" value="JPY">JPY</option>
+    </select>
+    <br />
+    <br />
+    <br />
+
+
+    <input type="number" placeholder="Amount"  name="amount" style="width: 200px; margin-right: 10px;" >
 
     =
     <br />
@@ -26,6 +59,20 @@
 </form>
 
 
-
+<script type="text/javascript">
+    $('.banks').change(function(){
+        $('.curr_name').prop('selectedIndex', 0); //ощищаем select с моделями при каждом изменении select'а с марками
+        var name = $(this).val(); //получаем value выбранной марки
+        if(name != '') { //проверяем, выбрана ли хоть какая-то марка
+            $('.curr_name').attr('disabled',false); //открываем select с моделями
+            $('.curr_name option').css('display','none'); //сначала скрываем все модели
+            $('.curr_name option.'+ name).css('display','inline'); //затем открываем те, которые нам нужны
+        }
+        else {
+            $('.curr_name').attr('disabled',true); //если не выбрана ни одна марка, скрываем select с моделями
+            $('.curr_name').css('display','none');
+        }
+    });
+</script>
 </body>
 </html>

@@ -1,8 +1,15 @@
 
-<div style="position: absolute; top: 45px; left: 485px; ">
+
+{% block answer %}
+<div style="position: absolute; top: 100px; left: 300px; ">
+    {% if needed_course %}
     {{ needed_course }}
+    {% else %}
+    {{ error }}
+    {% endif %}
 </div>
 
 
-{{ error }}
+
+{% endblock %}
 
