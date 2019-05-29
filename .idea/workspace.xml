@@ -78,8 +78,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/demo.twig">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/selectScript.twig">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+              <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -88,7 +97,7 @@
         <entry file="file://$PROJECT_DIR$/templates/form.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" column="54" lean-forward="true" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+              <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -136,6 +145,8 @@
         <option value="$PROJECT_DIR$/src/Validate/NumericValidator.php" />
         <option value="$PROJECT_DIR$/src/Controllers/CurrencyController.php" />
         <option value="$PROJECT_DIR$/templates/form.twig" />
+        <option value="$PROJECT_DIR$/templates/selectScript" />
+        <option value="$PROJECT_DIR$/templates/selectScript.twig" />
         <option value="$PROJECT_DIR$/templates/demo.twig" />
       </list>
     </option>
@@ -315,12 +326,12 @@
       <workItem from="1559028805857" duration="21364000" />
       <workItem from="1559050925050" duration="1475000" />
       <workItem from="1559109985281" duration="24488000" />
-      <workItem from="1559136548209" duration="3053000" />
+      <workItem from="1559136548209" duration="3988000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50518000" />
+    <option name="totallyTimeSpent" value="51453000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1368" height="744" extended-state="6" />
@@ -330,7 +341,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32852563" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32744783" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32905295" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -474,7 +485,7 @@
     <entry file="file://$PROJECT_DIR$/templates/form.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="54" lean-forward="true" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+          <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -495,10 +506,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/demo.twig">
+    <entry file="file://$PROJECT_DIR$/templates/selectScript">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/selectScript.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/demo.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
         </state>
       </provider>
     </entry>

@@ -13,22 +13,9 @@
 
 
 {% include 'form.twig' %}
+{% include 'selectScript.twig' %}
 
 
-<script type="text/javascript">
-    $('.banks').change(function(){
-        $('.curr_name').prop('selectedIndex', 0); //ощищаем select с моделями при каждом изменении select'а с марками
-        var name = $(this).val(); //получаем value выбранной марки
-        if(name != '') { //проверяем, выбрана ли хоть какая-то марка
-            $('.curr_name').attr('disabled',false); //открываем select с моделями
-            $('.curr_name option').css('display','none'); //сначала скрываем все модели
-            $('.curr_name option.'+ name).css('display','inline'); //затем открываем те, которые нам нужны
-        }
-        else {
-            $('.curr_name').attr('disabled',true); //если не выбрана ни одна марка, скрываем select с моделями
-            $('.curr_name').css('display','none');
-        }
-    });
-</script>
+
 </body>
 </html>
