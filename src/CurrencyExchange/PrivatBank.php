@@ -4,7 +4,7 @@
 namespace CurrencyExchange;
 
 use Lib\BankWrap;
-use \Exception;
+
 
 class PrivatBank implements Bank
 {
@@ -24,7 +24,7 @@ class PrivatBank implements Bank
                 }
             }
         }
-        throw new Exception('Current currency not found');
+        throw new \Exception\IncorrectCurrencyNameException('asdfasdf');
     }
 
     public function getBankWrap() : object

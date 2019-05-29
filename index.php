@@ -9,8 +9,6 @@ use CurrencyExchange\OpenExchange;
 use Lib\BankWrap;
 
 
-$bank = new OpenExchange();
-$bank_wr = new BankWrap();
 
 
 

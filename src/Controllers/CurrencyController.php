@@ -7,6 +7,7 @@ use Validate\NumericValidator;
 use Validate\RequestValidate;
 use CurrencyExchange\BankService;
 
+
 use Lib\TwigWrap;
 
 class CurrencyController
@@ -21,16 +22,16 @@ class CurrencyController
         if($validationReq->isSubmitted() && $validationReq->isValid())
         {
 
-            $currency = new CurrencyModel($validationNum->aboveZero($_POST['amount']), 'TDK');
+            $currency = new CurrencyModel($validationNum->aboveZero($_POST['amount']), $_POST['curr_name']);
 
             $course = new BankService();
             try
             {
                 $exchange_raith = $course->exchange('PrivatBank', $currency->getCurrName(), $currency->getAmount());
                 $twig->render(['needed_course' => $exchange_raith], 'exchange.twig');
-            } catch(\Exception $e)
+            } catch(\Exception\IncorrectCurrencyNameException $e)
             {
-
+                $twig->render(['error' => $e->getMessage()], 'exchange.twig');
             }
         }
 

@@ -23,15 +23,13 @@ class BankService
         {
             if($bank->getBankName() === $bankName)
             {
-                try {
-                    return $this->getInstance($bank)->getCourse($currName);
-                }catch(\Exception $e){
-                    echo $e->getMessage();
-                }
+                return $this->getInstance($bank)->getCourse($currName);
             }
         }
-        throw new \Exception('not found');
+        throw new \Exception\IncorrectCurrencyNameException();
     }
+
+
 
     public function exchange(string $bankName, string $currName, float $amount) : float
     {
@@ -40,11 +38,11 @@ class BankService
 
 
 
-
     public function getInstance($bank) : object
     {
         return new $bank;
     }
+
 
 
     public function add(Bank $class) : void
