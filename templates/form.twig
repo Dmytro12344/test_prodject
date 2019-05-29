@@ -1,0 +1,44 @@
+<form action="/" method="POST" style="margin-top: 40px; margin-left: 40px; " >
+
+    <select class="banks" name="bank" >
+        <option value="">Bank</option>
+        <option value="PrivatBank">PrivatBank</option>
+        <option value="OpenExchange">OpenExchange</option>
+    </select>
+
+
+    <select class="curr_name" name="curr_name"  style="width: 200px;" disabled>
+        <option value="">Currency name</option>
+
+        <option class="PrivatBank" value="USD">USD</option>
+        <option class="PrivatBank" value="RUR">RUR</option>
+        <option class="PrivatBank" value="EUR">EUR</option>
+
+        <option class="OpenExchange" value="UAH">UAH</option>
+        <option class="OpenExchange" value="EUR">EUR</option>
+        <option class="OpenExchange" value="RUB">RUB</option>
+        <option class="OpenExchange" value="AED">AED</option>
+        <option class="OpenExchange" value="AFN">AFN</option>
+        <option class="OpenExchange" value="ALL">ALL</option>
+        <option class="OpenExchange" value="CNY">CNY</option>
+        <option class="OpenExchange" value="CLF">CLF</option>
+        <option class="OpenExchange" value="CAD">CAD</option>
+        <option class="OpenExchange" value="KMF">KMF</option>
+        <option class="OpenExchange" value="JOD">JOD</option>
+        <option class="OpenExchange" value="KPW">KPW</option>
+        <option class="OpenExchange" value="KGS">KGS</option>
+        <option class="OpenExchange" value="JPY">JPY</option>
+    </select>
+    <br />
+    <br />
+    <br />
+
+
+    <input type="number" placeholder="Amount"  name="amount" style="width: 200px; margin-right: 10px;" >
+
+    =
+    <br />
+    <br />
+    <input type="submit" name="submit">
+
+</form>
