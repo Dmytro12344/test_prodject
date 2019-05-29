@@ -21,15 +21,21 @@ class CurrencyController
 
         if($validationReq->isSubmitted() && $validationReq->isValid())
         {
+            try {
+                $currency = new CurrencyModel($validationNum->aboveZero($_POST['amount']), $_POST['curr_name']);
 
-            $currency = new CurrencyModel($validationNum->aboveZero($_POST['amount']), $_POST['curr_name']);
 
-            $course = new BankService();
-            try
-            {
+                $course = new BankService();
+
                 $exchange_raith = $course->exchange($_POST['bank'], $currency->getCurrName(), $currency->getAmount());
                 $twig->render(['needed_course' => $exchange_raith], 'exchange.twig');
-            } catch(\Exception\IncorrectCurrencyNameException $e)
+
+            }
+            catch(\Exception\IncorrectCurrencyNameException $e)
+            {
+                $twig->render(['error' => $e->getMessage()], 'exchange.twig');
+            }
+            catch(\Exception\InvalidAmountException $e)
             {
                 $twig->render(['error' => $e->getMessage()], 'exchange.twig');
             }

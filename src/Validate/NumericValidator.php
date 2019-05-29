@@ -10,7 +10,7 @@ class NumericValidator
     {
         if($date < 0)
         {
-            return $date * (-1);
+            throw new \Exception\InvalidAmountException();
         }
         return $date;
     }
