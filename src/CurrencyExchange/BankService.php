@@ -11,7 +11,6 @@ class BankService
     public function __construct()
     {
         $this->add(new PrivatBank());
-        $this->add(new SomeBank());
         $this->add(new OpenExchange());
     }
 
@@ -21,7 +20,7 @@ class BankService
         {
             if($bank->getBankName() === $bankName)
             {
-                return $this->getInstance($bank)->getCourseToFrom($currName);
+                return $bank->getCourseToFrom($currName);
             }
         }
         throw new \Exception\IncorrectCurrencyNameException();

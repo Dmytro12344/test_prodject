@@ -6,16 +6,18 @@ namespace Request;
 
 class Request
 {
-    public function getRequest() : array
+    public function take(array $arr) : array
     {
-        $Data = [];
+      $date = [];
 
-        if($_REQUEST !== null || !empty($_REQUEST))
+      foreach($arr as $value)
+      {
+        if(isset($_REQUEST[$value]))
         {
-            $Data = $_REQUEST;
+            $date[$value] = $_REQUEST[$value];
         }
-
-        return $Data;
+      }
+      return $date;
     }
 
 }

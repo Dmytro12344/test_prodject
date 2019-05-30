@@ -9,15 +9,9 @@ use Helper\Common;
 
 
 
-
-
-
-
 $route = new Router('example.com');
 $route->add('home', '/', 'CurrencyController:exchange');
 $routerDispatch = $route->dispatch('GET', Common::getPathUrl());
-
-
 
 
 

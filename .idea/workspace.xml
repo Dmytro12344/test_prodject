@@ -3,16 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="48469ab9-bd02-4514-a40a-7f74e385f73d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/CurrencyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CurrencyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CurrencyExchange/Bank.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrencyExchange/Bank.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CurrencyExchange/BankService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrencyExchange/BankService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CurrencyExchange/OpenExchange.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrencyExchange/OpenExchange.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CurrencyExchange/PrivatBank.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrencyExchange/PrivatBank.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CurrencyExchange/SomeBank.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrencyExchange/SomeBank.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/CurrencyModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/CurrencyModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/demo.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/demo.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/exchange.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/form.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CurrencyExchange/SomeBank.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/CurrencyModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/CurrencyExchangeRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Request/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Request/Request.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Validate/RequestValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Validate/RequestValidate.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/instantiator/" />
@@ -64,62 +61,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
-              <folding>
-                <element signature="e#56#78#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controllers/CurrencyController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+            <state relative-caret-position="210">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
               <folding>
-                <element signature="e#31#55#0#PHP" expanded="true" />
+                <element signature="e#31#65#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/CurrencyModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CurrencyExchange/PrivatBank.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/form.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="36" column="77" selection-start-line="36" selection-start-column="77" selection-end-line="36" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CurrencyExchange/BankService.php">
+        <entry file="file://$PROJECT_DIR$/src/Validate/RequestValidate.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="318">
-              <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+              <folding>
+                <element signature="e#30#70#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/CurrencyExchangeRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -138,11 +108,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Validate/PostValidate.php" />
-        <option value="$PROJECT_DIR$/src/Request/Request.php" />
         <option value="$PROJECT_DIR$/src/exception/ArgumentException.php" />
         <option value="$PROJECT_DIR$/src/Exception/ArgumentException.php" />
         <option value="$PROJECT_DIR$/src/Exception/StringArgumentException.php" />
-        <option value="$PROJECT_DIR$/src/Validate/RequestValidate.php" />
         <option value="$PROJECT_DIR$/src/Exception/IncorrectArgumentException.php" />
         <option value="$PROJECT_DIR$/src/Exception/IncorrectCurrencyException.php" />
         <option value="$PROJECT_DIR$/src/Exception/IncorrectCurrencyNameException.php" />
@@ -150,7 +118,6 @@
         <option value="$PROJECT_DIR$/src/Exception/InvalidAmountException.php" />
         <option value="$PROJECT_DIR$/templates/selectScript" />
         <option value="$PROJECT_DIR$/templates/selectScript.twig" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/src/Validate/DefinedValidate.php" />
         <option value="$PROJECT_DIR$/src/Exception/CurrencyNotFoundException.php" />
         <option value="$PROJECT_DIR$/src/Validate/NumericValidator.php" />
@@ -158,10 +125,14 @@
         <option value="$PROJECT_DIR$/src/CurrencyExchange/OpenExchange.php" />
         <option value="$PROJECT_DIR$/src/CurrencyExchange/PrivatBank.php" />
         <option value="$PROJECT_DIR$/src/CurrencyExchange/SomeBank.php" />
-        <option value="$PROJECT_DIR$/src/CurrencyExchange/BankService.php" />
         <option value="$PROJECT_DIR$/templates/demo.twig" />
-        <option value="$PROJECT_DIR$/src/Model/CurrencyModel.php" />
         <option value="$PROJECT_DIR$/templates/form.twig" />
+        <option value="$PROJECT_DIR$/src/Model/CurrencyModel.php" />
+        <option value="$PROJECT_DIR$/src/CurrencyExchange/BankService.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/src/Request/Request.php" />
+        <option value="$PROJECT_DIR$/src/Model/CurrencyExchangeRequest.php" />
+        <option value="$PROJECT_DIR$/src/Validate/RequestValidate.php" />
         <option value="$PROJECT_DIR$/src/Controllers/CurrencyController.php" />
       </list>
     </option>
@@ -251,6 +222,12 @@
               <item name="example.com" type="b2602c69:ProjectViewProjectNode" />
               <item name="example.com" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="example.com" type="b2602c69:ProjectViewProjectNode" />
+              <item name="example.com" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="CurrencyExchange" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -264,6 +241,18 @@
               <item name="example.com" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="example.com" type="b2602c69:ProjectViewProjectNode" />
+              <item name="example.com" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Request" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="example.com" type="b2602c69:ProjectViewProjectNode" />
+              <item name="example.com" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Validate" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="example.com" type="b2602c69:ProjectViewProjectNode" />
@@ -330,12 +319,12 @@
       <workItem from="1559136548209" duration="3988000" />
       <workItem from="1559158107603" duration="2911000" />
       <workItem from="1559162229618" duration="1359000" />
-      <workItem from="1559197225975" duration="14404000" />
+      <workItem from="1559197225975" duration="32726000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70127000" />
+    <option name="totallyTimeSpent" value="88449000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1368" height="744" extended-state="6" />
@@ -366,13 +355,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Request/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/PrivatBankTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -385,13 +367,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1650">
           <caret line="27" column="2" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Validate/RequestValidate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="31" column="36" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -424,13 +399,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/selectScript" />
-    <entry file="file://$PROJECT_DIR$/templates/selectScript.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/exchange.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -442,20 +410,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" selection-start-line="9" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Validate/DefinedValidate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Validate/NumericValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -473,37 +427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/demo.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CurrencyExchange/BankService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
-          <folding>
-            <element signature="e#56#78#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/CurrencyModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CurrencyExchange/OpenExchange.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
@@ -518,26 +441,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/form.twig">
+    <entry file="file://$PROJECT_DIR$/templates/selectScript.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="36" column="77" selection-start-line="36" selection-start-column="77" selection-end-line="36" selection-end-column="77" />
+        <state relative-caret-position="210">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CurrencyExchange/PrivatBank.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
+        <state relative-caret-position="213">
           <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CurrencyExchange/BankService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Request/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Validate/NumericValidator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/demo.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/form.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Validate/DefinedValidate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="62" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#56#78#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/CurrencyExchangeRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Validate/RequestValidate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#30#70#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/CurrencyController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+        <state relative-caret-position="210">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
-            <element signature="e#31#55#0#PHP" expanded="true" />
+            <element signature="e#31#65#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

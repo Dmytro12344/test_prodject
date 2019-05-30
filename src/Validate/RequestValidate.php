@@ -2,48 +2,60 @@
 
 
 namespace Validate;
-use Request\Request;
+
+
+use Exception\CurrencyNotFoundException;
+use Exception\IncorrectCurrencyNameException;
+use Exception\InvalidAmountException;
 
 class RequestValidate
 {
-    public function isSubmitted(): bool
-    {
-        if(isset($_POST['submit']))
-        {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
-    public function isValid() : bool
+    public function fullRequestCheck(object $object) : string
     {
-        foreach($this->getRequestInstance()->getRequest() as $item)
-        {
-            if(!isset($item) || empty($item) || $item === null)
-            {
-                return false;
+        if($object->getSubmit()) {
+            try {
+                $amount = $this->checkToCorrectAmount($object->getAmount());
+                $currencyName = $this->correctCurrencyName($object->getCarrName);
             }
-            return true;
+            catch(InvalidAmountException | CurrencyNotFoundException | IncorrectCurrencyNameException  $e)
+            {
+                return $e->getMessage();
+            }
         }
-        return false;
+        return '';
     }
 
-    public function getCorrectNumber($date) : float
+
+    public function checkToCorrectAmount($date) : float
     {
-        if($date < 0)
+        if($date < 0 || empty($date))
         {
-            return $date * (-1);
+            throw new \Exception\InvalidAmountException();
         }
         return $date;
     }
 
-
-
-
-
-        public function getRequestInstance() : object
+   /* public function correctBankName() : string
     {
-        return new Request();
+
+    }*/
+
+    public function correctCurrencyName($currName) : string
+    {
+        if($currName === null || empty($currName))
+        {
+            throw new \Exception\IncorrectCurrencyNameException();
+        }
+        return $currName;
     }
+
+
+
+
+
+
+
+
+
 }
