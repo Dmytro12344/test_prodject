@@ -23,7 +23,7 @@ class BankService
                 return $bank->getCourseToFrom($currName);
             }
         }
-        throw new \Exception\IncorrectCurrencyNameException();
+        return false;
     }
 
     public function exchange(string $bankName, string $currName, float $amount) : float
