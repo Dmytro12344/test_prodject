@@ -7,8 +7,10 @@ use Validate\NumericValidator;
 use Validate\RequestValidate;
 use Validate\DefinedValidate;
 use CurrencyExchange\BankService;
+use Exception\CurrencyNotFoundException;
+use Exception\InvalidAmountException;
+use Exception\IncorrectCurrencyNameException;
 use Lib\TwigWrap;
-
 
 
 class CurrencyController
@@ -20,29 +22,30 @@ class CurrencyController
         $validationReq = new RequestValidate();
         $validationNum = new NumericValidator();
         $defValidation = new DefinedValidate();
-        $contents[] = '';
+        $error = '';
+        $amount = 1;
+        $content='';
+
         if($validationReq->isSubmitted())
         {
             try {
                 $currency = new CurrencyModel($validationNum->checkToCorrectAmount($_POST['amount']), $defValidation->checkToPost('curr_name'));
                 $course = new BankService();
-                $contents['exchangeRte'] = $course->exchange($_POST['bank'], $currency->getCurrName(), $currency->getAmount());
+                $amount = $currency->getAmount();
+                $content = $course->exchange($_POST['bank'], $currency->getCurrName(), $currency->getAmount());
             }
-            catch(\Exception\IncorrectCurrencyNameException $e)
+            catch(InvalidAmountException | CurrencyNotFoundException | IncorrectCurrencyNameException  $e)
             {
-                $contents['errCurrencyName'] = $e->getMessage();
-            }
-            catch(\Exception\InvalidAmountException $e)
-            {
-                $contents['errAmount'] = $e->getMessage();
-            }
-            catch(\Exception\CurrencyNotFoundException $e){
-                $contents['errCurrencyNotFound'] = $e->getMessage();
+                $error = $e->getMessage();
             }
         }
-
-        $twig->render(['contents' => $contents], 'demo.twig');
-
+        $twig->render([
+            'title' => 'Currency exchange',
+            'error' => $error,
+            'content' => $content,
+            'amount' => $amount
+        ],
+            'demo.twig');
     }
 
 

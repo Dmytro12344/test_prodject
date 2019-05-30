@@ -16,7 +16,7 @@ class SomeBank implements Bank
         return 'SomeBank';
     }
 
-    public function actionToConvert(): string
+    public function getCourseToFrom(string $course): float
     {
        return '*';
     }

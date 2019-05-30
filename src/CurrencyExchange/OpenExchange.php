@@ -36,8 +36,8 @@ class OpenExchange implements Bank
     }
 
 
-    public function actionToConvert(): string
+    public function getCourseToFrom(string $course): float
     {
-        return '*';
+        return $this->getCourse($course);
     }
 }
