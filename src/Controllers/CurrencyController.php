@@ -20,7 +20,7 @@ class CurrencyController
         $validationReq = new RequestValidate();
         $validationNum = new NumericValidator();
         $defValidation = new DefinedValidate();
-
+        $contents[] = '';
         if($validationReq->isSubmitted())
         {
             try {
@@ -41,7 +41,7 @@ class CurrencyController
             }
         }
 
-            $twig->render(['contents' => $contents], 'demo.twig');
+        $twig->render(['contents' => $contents], 'demo.twig');
 
     }
 
