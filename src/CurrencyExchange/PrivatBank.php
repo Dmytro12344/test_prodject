@@ -9,7 +9,7 @@ use Lib\BankWrap;
 class PrivatBank implements Bank
 {
 
-    public function getCourse(string $course = 'USD') : float
+    public function getCourse(string $course) : float
     {
         $courses = $this->getBankWrap()->getApiContent('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=3');
 
@@ -23,6 +23,7 @@ class PrivatBank implements Bank
                     return $course_curr;
                 }
             }
+            throw new \Exception\CurrencyNotFoundException();
         }
         throw new \Exception\IncorrectCurrencyNameException('asdfasdf');
     }

@@ -6,7 +6,7 @@ namespace CurrencyExchange;
 
 class SomeBank implements Bank
 {
-    public function getCourse() : float
+    public function getCourse(string $coure) : float
     {
         return 3;
     }

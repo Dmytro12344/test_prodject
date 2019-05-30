@@ -5,7 +5,7 @@ namespace CurrencyExchange;
 interface Bank
 {
 
-    public function getCourse() : float;
+    public function getCourse(string $course) : float;
 
     public function getBankName() : string;
 

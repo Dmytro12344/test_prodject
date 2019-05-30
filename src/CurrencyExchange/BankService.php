@@ -7,7 +7,7 @@ namespace CurrencyExchange;
 class BankService
 {
 
-    public $banks = [];
+    private $banks = [];
 
     public function __construct()
     {
@@ -17,7 +17,7 @@ class BankService
     }
 
 
-    public function getCourse(string $bankName, string $currName) : float
+    private function getCourse(string $bankName, string $currName) : float
     {
         foreach($this->banks as $bank)
         {
@@ -38,7 +38,7 @@ class BankService
 
 
 
-    public function getInstance($bank) : object
+    private function getInstance($bank) : object
     {
         return new $bank;
     }
@@ -47,7 +47,6 @@ class BankService
 
     public function add(Bank $class) : void
     {
-        $bank = new $class;
-        $this->banks[] = $bank;
+        $this->banks[] = $class;
     }
 }

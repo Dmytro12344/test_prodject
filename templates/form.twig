@@ -37,6 +37,15 @@
     <input type="number" placeholder="Amount"  name="amount" style="width: 200px; margin-right: 10px;" >
 
     =<div style="position: absolute; top: 100px; left: 300px; ">
+        {% if contents is defined %}
+          {% for content in contents %}
+            {{ content }}
+          {% endfor %}
+        {% endif %}
+
+
+
+
         {% if needed_course %}
             {{ needed_course }}
         {% else %}
