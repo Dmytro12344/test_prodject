@@ -13,7 +13,7 @@ class PrivatBank implements Bank
     {
         $courses = $this->getBankWrap()->getApiContent('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=3');
 
-        if(isset($courses) && !empty($course))
+        if(is_array($courses))
         {
             foreach ($courses as $item)
             {
@@ -25,17 +25,28 @@ class PrivatBank implements Bank
             }
             throw new \Exception\CurrencyNotFoundException();
         }
-        throw new \Exception\IncorrectCurrencyNameException('asdfasdf');
+        throw new \Exception\IncorrectCurrencyNameException();
     }
+
+
 
     public function getBankWrap() : object
     {
         return new BankWrap();
     }
 
+
+
     public function getBankName(): string
     {
         return 'PrivatBank';
+    }
+
+
+
+    public function actionToConvert(): string
+    {
+        return '/';
     }
 
 }

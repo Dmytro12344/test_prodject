@@ -24,7 +24,7 @@ class CurrencyController
         if($validationReq->isSubmitted())
         {
             try {
-                $currency = new CurrencyModel($validationNum->aboveZero($_POST['amount']), $defValidation->checkToPost('curr_name'));
+                $currency = new CurrencyModel($validationNum->checkToCorrectAmount($_POST['amount']), $defValidation->checkToPost('curr_name'));
                 $course = new BankService();
                 $contents['exchangeRte'] = $course->exchange($_POST['bank'], $currency->getCurrName(), $currency->getAmount());
             }

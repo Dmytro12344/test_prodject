@@ -6,9 +6,9 @@ namespace Validate;
 
 class NumericValidator
 {
-    public function aboveZero($date) : float
+    public function checkToCorrectAmount($date) : float
     {
-        if($date < 0)
+        if($date < 0 || empty($date))
         {
             throw new \Exception\InvalidAmountException();
         }

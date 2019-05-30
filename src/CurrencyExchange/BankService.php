@@ -33,7 +33,11 @@ class BankService
 
     public function exchange(string $bankName, string $currName, float $amount) : float
     {
-        return $this->getCourse($bankName, $currName) * $amount;
+        if($this->getInstance('CurrencyExchange\\'. $bankName)->actionToConvert() === '/') {
+            return  $amount / $this->getCourse($bankName, $currName);
+        } else {
+            return  $amount *$this->getCourse($bankName, $currName);
+        }
     }
 
 

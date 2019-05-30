@@ -9,4 +9,6 @@ interface Bank
 
     public function getBankName() : string;
 
+    public function actionToConvert() : string;
+
 }

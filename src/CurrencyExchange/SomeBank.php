@@ -15,4 +15,9 @@ class SomeBank implements Bank
     {
         return 'SomeBank';
     }
+
+    public function actionToConvert(): string
+    {
+       return '*';
+    }
 }
