@@ -6,6 +6,7 @@
         <option value="OpenExchange">USD</option>
     </select>
 
+    <input type="submit" name="revers" value="Reversion">
 
     <select class="curr_name" name="curr_name"  style="width: 200px;" disabled>
         <option value="">To</option>
@@ -38,15 +39,15 @@
 
     =
 
-    {% if content %}
+    {% if content is not empty %}
         {{ content }}
-        {% else %}
+    {% else %}
         {{ error }}
     {% endif %}
 
 
     <br />
     <br />
-    <input type="submit" name="submit">
+    <input type="submit" name="submit" value="submit">
 
 </form>

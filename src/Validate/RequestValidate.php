@@ -13,39 +13,44 @@ class RequestValidate
 
     public function fullRequestCheck(object $object) : string
     {
-        if($object->getSubmit()) {
-            try {
-                $amount = $this->checkToCorrectAmount($object->getAmount());
-                $currencyName = $this->correctCurrencyName($object->getCarrName);
+        try {
+            $this->checkToCorrectAmount($object->getAmount());
+            $this->correctCurrencyName($object->getCurrName());
+            $this->correctBankName($object->getBankName());
             }
-            catch(InvalidAmountException | CurrencyNotFoundException | IncorrectCurrencyNameException  $e)
-            {
-                return $e->getMessage();
-            }
+        catch(InvalidAmountException | CurrencyNotFoundException | IncorrectCurrencyNameException  $e)
+        {
+            $error = $e->getMessage();
+            return $error;
         }
-        return '';
+
+        return false;
     }
 
 
     public function checkToCorrectAmount($date) : float
     {
-        if($date < 0 || empty($date))
+        if($date < 0)
         {
-            throw new \Exception\InvalidAmountException();
+            throw new InvalidAmountException();
         }
         return $date;
     }
 
-   /* public function correctBankName() : string
+    public function correctBankName($bankName) : string
     {
-
-    }*/
+        if($bankName === null || empty($bankName))
+        {
+            throw new CurrencyNotFoundException();
+        }
+        return $bankName;
+    }
 
     public function correctCurrencyName($currName) : string
     {
         if($currName === null || empty($currName))
         {
-            throw new \Exception\IncorrectCurrencyNameException();
+            throw new IncorrectCurrencyNameException();
         }
         return $currName;
     }

@@ -2,7 +2,10 @@
 
 namespace Controllers;
 
+
+use Exception\IncorrectCurrencyNameException;
 use Model\CurrencyExchangeRequest;
+use Exception\CurrencyNotFoundException;
 use Validate\RequestValidate;
 use CurrencyExchange\BankService;
 use Request\Request;
@@ -17,24 +20,28 @@ class CurrencyController
         $twig = new TwigWrap();
         $request = new Request();
         $validator = new RequestValidate();
+        $currency = new CurrencyExchangeRequest($request->take(['amount','curr_name','submit', 'bank', 'revers']));
+        $content = $validator->fullRequestCheck($currency);
+        
+        $course = new BankService();
 
-        $currency = new CurrencyExchangeRequest($request->take(['amount','curr_name','submit']));
-        if($validator->fullRequestCheck($currency) !== '') {
-
-
-            $error = '';
-
-
-            $course = new BankService();
-            $amount = $currency->getAmount();
-            $content = $course->exchange($_POST['bank'], $currency->getCurrName(), $currency->getAmount());
+        try{
+            if(!$content) {
+                $content = $course->exchange($currency->getBankName(),
+                    $currency->getCurrName(),
+                    $currency->getAmount(),
+                    $currency->getRevers());
+            }
+        }
+        catch(\Exception\CurrencyNotFoundException | IncorrectCurrencyNameException | CurrencyNotFoundException $e)
+        {
+            $content = $e->getMessage();
         }
 
         $twig->render([
             'title' => 'Currency exchange',
-            'error' => $error,
             'content' => $content,
-            'amount' => $amount
+            'amount' => $currency->getAmount()
         ],
             'demo.twig');
     }

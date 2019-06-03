@@ -9,6 +9,8 @@ interface Bank
 
     public function getBankName() : string;
 
-    public function getCourseToFrom(string $course) : float;
+    public function getCourseFromTo(string $course) : float;
+
+    public function getReversCourse(string $course) : float;
 
 }
